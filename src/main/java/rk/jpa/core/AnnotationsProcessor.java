@@ -109,7 +109,6 @@ public class AnnotationsProcessor {
         Arrays.stream(clazz.getDeclaredFields()).forEach(sdf -> {
             sdf.setAccessible(true);
             ;
-            System.out.println("Field Name " + sdf.getName() + " Get Value " + sdf.getType());
         });
         fieldTypeMap = Arrays.stream(clazz.getDeclaredFields()).collect(
                 Collectors.toMap(field -> field.getName(), field -> field.getType())

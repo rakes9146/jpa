@@ -42,7 +42,6 @@ public class EntityManagerImpl implements EntityManager {
 
         try {
             entityTransaction.begin();
-            System.out.println("State " + persistenceContext.getState(object));
             if (persistenceContext.getState(object) == null) {
                 String insertQuery = jpaQueryService.createInsertQuery();
                 jdbcExecutor.insert(insertQuery, jpaQueryService.entityFieldValueParaMapForInsert(object));

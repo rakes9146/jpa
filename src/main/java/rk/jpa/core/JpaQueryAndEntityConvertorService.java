@@ -212,7 +212,6 @@ public class JpaQueryAndEntityConvertorService {
         Field[] fields = clazz.getDeclaredFields();
         for (int i = 0; i < fields.length; i++) {
             Field field = fields[i];
-            System.out.println(field.getName());
             field.setAccessible(true);
             try {
                 if (!field.isAnnotationPresent(Id.class))
@@ -235,7 +234,6 @@ public class JpaQueryAndEntityConvertorService {
         Field[] fields = clazz.getDeclaredFields();
         for (int i = 0; i < fields.length; i++) {
             Field field = fields[i];
-            System.out.println(field.getName());
             field.setAccessible(true);
             try {
                 classValMap.put(fieldIndexMap.get(field.getName()), field.get(object));
@@ -256,7 +254,6 @@ public class JpaQueryAndEntityConvertorService {
         Field[] fields = clazz.getDeclaredFields();
         for (int i = 0; i < fields.length; i++) {
             Field field = fields[i];
-            System.out.println(field.getName());
             field.setAccessible(true);
             //set it false just addded for slelect query
             if (field.isAnnotationPresent(Id.class))
@@ -327,7 +324,6 @@ public class JpaQueryAndEntityConvertorService {
         try {
             Map<String, List<EntityMetaDto>> fieldColumnMapping = annotationsProcessor.getFieldsMetaData();
             if (!resultSet.isBeforeFirst()) {
-                System.out.println("-------No data found.===============");
             }
 
             if (resultSet.next()) {
